@@ -3,7 +3,7 @@ maximum_capacity_package = 35
 locate_inside = []
 
 
-class recycle_bin:
+class RecycleBin:
     print('Памяти в корзине на данный момент: {}'.format(maximum_capacity_recbin))
 
     def delete_recbin(self, entered_by_user):
@@ -24,7 +24,7 @@ class recycle_bin:
         print('Осталось {} памяти,'.format(maximum_capacity_recbin))
 
 
-class package:
+class Package:
     print('Памяти в пакете на данный момент: {}'.format(maximum_capacity_package))
 
     def delete_package(self, entered_by_user):
@@ -45,7 +45,7 @@ class package:
         print('Осталось {} памяти,'.format(maximum_capacity_package))
 
 
-class seized_words:
+class SeizedWords:
     def locate(self, entered_by_user):
         locate_inside.append(entered_by_user)
 
@@ -55,22 +55,22 @@ def main():
     if sorting.lower() == 'корзина':
         while True:
             input_recycle_bin = input('Введите то, что надо удалить (слово / цифру): ')
-            two = seized_words()
+            two = SeizedWords()
             two.locate(input_recycle_bin)
             if input_recycle_bin.isdigit():
                 input_recycle_bin = int(input_recycle_bin)
-            one = recycle_bin()
+            one = RecycleBin()
             if one.delete_recbin(input_recycle_bin):
                 return
 
     if sorting.lower() == 'пакет':
         while True:
             input_package = input('Введите то, что надо положить в пакет (слово / цифру): ')
-            two = seized_words()
+            two = SeizedWords()
             two.locate(input_package)
             if input_package.isdigit():
                 input_package = int(input_package)
-            one = package()
+            one = Package()
             if one.delete_package(input_package):
                 return
 
