@@ -1,24 +1,24 @@
 import math
 
 
-class distribution:
+class Distribution:
     input_of_numbers = input('Введите количество чисел, через пробел (max 3): ')
     form_input_of_numbers = input_of_numbers.split(' ')
 
     def draw(self):
         if len(self.form_input_of_numbers) == 1:
-            one = build_a_square()
+            one = BuildSquare()
             one.build_sq()
 
         elif len(self.form_input_of_numbers) == 2:
-            two = build_a_triangle()
+            two = BuildTriangle()
             two.build_tr()
         elif len(self.form_input_of_numbers) == 3:
-            three = build_a_rectangle()
+            three = BuildRectangle()
             three.build_re()
 
 
-class build_a_square(distribution):
+class BuildSquare(Distribution):
     def build_sq(self):
         print("""
             ------------
@@ -35,7 +35,7 @@ class build_a_square(distribution):
         print('Периметр квадрата = {}'.format(perimeter))
 
 
-class build_a_triangle(distribution):
+class BuildTriangle(Distribution):
     def build_tr(self):
         print("""
             ---------------------
@@ -51,7 +51,7 @@ class build_a_triangle(distribution):
         print('Периметр прямоугольника = {}'.format(perimetr))
 
 
-class build_a_rectangle(distribution):
+class BuildRectangle(Distribution):
     def build_re(self):
         print("""        
                  /\.
@@ -71,5 +71,5 @@ class build_a_rectangle(distribution):
 
 
 if __name__ == '__main__':
-    a = distribution()
+    a = Distribution()
     a.draw()
